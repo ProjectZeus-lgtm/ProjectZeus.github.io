@@ -1,0 +1,7 @@
+node_modules/
+.env
+dist/
+generated/
+
+# Legacy static prototype — tracked separately
+ProjectZeus.github.io/

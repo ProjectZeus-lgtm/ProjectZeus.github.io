@@ -1,0 +1,189 @@
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+	--bg: #07111f;
+	--bg-alt: #0d1b2f;
+	--surface: rgba(15, 28, 48, 0.88);
+	--border: rgba(120, 164, 255, 0.2);
+	--text: #edf3ff;
+	--text-muted: #9db2d1;
+	--accent: #7c9cff;
+	--accent-2: #34d3a2;
+	--danger: #ff6d8a;
+	--warning: #ffd36b;
+	--shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+	--radius: 18px;
+	--radius-lg: 24px;
+	font-family: Inter, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	color-scheme: dark;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	color: var(--text);
+	background:
+		radial-gradient(circle at top, rgba(124, 156, 255, 0.18), transparent 30%),
+		linear-gradient(180deg, #091220 0%, #040912 100%);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* ─── Layout Shell ──────────────────────────────────────── */
+.page-container {
+	width: min(1200px, calc(100vw - 32px));
+	margin: 0 auto;
+	padding: 2rem 0 4rem;
+}
+
+/* ─── Buttons ───────────────────────────────────────────── */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	border: 1px solid var(--border);
+	background: linear-gradient(180deg, rgba(124, 156, 255, 0.22), rgba(124, 156, 255, 0.08));
+	color: var(--text);
+	padding: 0.7rem 1.25rem;
+	border-radius: 14px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	text-decoration: none;
+}
+
+.btn:hover {
+	border-color: rgba(124, 156, 255, 0.5);
+	transform: translateY(-1px);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+	text-decoration: none;
+}
+
+.btn-primary {
+	background: linear-gradient(135deg, var(--accent), #5b7cff);
+	border-color: var(--accent);
+	color: #fff;
+}
+
+.btn-primary:hover {
+	border-color: #99b5ff;
+	box-shadow: 0 4px 24px rgba(124, 156, 255, 0.3);
+}
+
+.btn-ghost {
+	background: rgba(255, 255, 255, 0.03);
+	border-color: var(--border);
+}
+
+.btn-danger {
+	background: rgba(255, 109, 138, 0.15);
+	border-color: rgba(255, 109, 138, 0.3);
+	color: var(--danger);
+}
+
+/* ─── Badges ────────────────────────────────────────────── */
+.badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.25rem 0.65rem;
+	border-radius: 999px;
+	font-size: 0.78rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.badge-solo {
+	background: rgba(124, 156, 255, 0.15);
+	color: var(--accent);
+}
+
+.badge-multiplayer {
+	background: rgba(52, 211, 162, 0.15);
+	color: var(--accent-2);
+}
+
+.badge-lobby {
+	background: rgba(255, 211, 107, 0.15);
+	color: var(--warning);
+}
+
+.badge-active {
+	background: rgba(52, 211, 162, 0.15);
+	color: var(--accent-2);
+}
+
+.badge-completed {
+	background: rgba(255, 255, 255, 0.08);
+	color: var(--text-muted);
+}
+
+/* ─── Form Controls ─────────────────────────────────────── */
+input[type='text'],
+input[type='search'],
+select {
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid var(--border);
+	color: var(--text);
+	padding: 0.7rem 1rem;
+	border-radius: 12px;
+	font-size: 1rem;
+	outline: none;
+	transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus {
+	border-color: var(--accent);
+}
+
+/* ─── Utilities ─────────────────────────────────────────── */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.text-muted {
+	color: var(--text-muted);
+}
+
+.text-accent {
+	color: var(--accent);
+}
+
+.text-center {
+	text-align: center;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+	.page-container {
+		padding: 1rem 0 2rem;
+	}
+}
